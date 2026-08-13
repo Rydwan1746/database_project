@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # CORS Headers App
+    'corsheaders',
     # System Modules
     'officers',
     'citizens',
@@ -143,3 +145,29 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+# CORS Configuration
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:5173",
+]
+CORS_ALLOW_CREDENTIALS = True
+
+# CSRF Trusted Origins (needed for React requests with credentials)
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:5173",
+]
+
+# Session Configuration
+SESSION_COOKIE_HTTPONLY = True        # Blocks JS from reading the session cookie (XSS protection)
+SESSION_COOKIE_SAMESITE = 'Lax'      # Allows cookie to be sent on cross-site navigations, not on API calls
+SESSION_COOKIE_AGE = 28800           # Session expires after 8 hours of inactivity
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# CSRF cookie must be readable by React JS to extract the token for POST request headers
+CSRF_COOKIE_HTTPONLY = False
