@@ -1,0 +1,43 @@
+/admin/ django.contrib.admin.sites.index        admin:index
+/admin/<app_label>/     django.contrib.admin.sites.app_index    admin:app_list
+/admin/<url>    django.contrib.admin.sites.catch_all_view
+/admin/auth/group/      django.contrib.admin.options.changelist_view    admin:auth_group_changelist
+/admin/auth/group/<path:object_id>/     django.views.generic.base.RedirectView
+/admin/auth/group/<path:object_id>/change/      django.contrib.admin.options.change_view        admin:auth_group_change
+/admin/auth/group/<path:object_id>/delete/      django.contrib.admin.options.delete_view        admin:auth_group_delete
+/admin/auth/group/<path:object_id>/history/     django.contrib.admin.options.history_view       admin:auth_group_history
+/admin/auth/group/add/  django.contrib.admin.options.add_view   admin:auth_group_add
+/admin/auth/user/       django.contrib.admin.options.changelist_view    admin:auth_user_changelist
+/admin/auth/user/<id>/password/ django.contrib.auth.admin.user_change_password  admin:auth_user_password_change
+/admin/auth/user/<path:object_id>/      django.views.generic.base.RedirectView
+/admin/auth/user/<path:object_id>/change/       django.contrib.admin.options.change_view        admin:auth_user_change
+/admin/auth/user/<path:object_id>/delete/       django.contrib.admin.options.delete_view        admin:auth_user_delete
+/admin/auth/user/<path:object_id>/history/      django.contrib.admin.options.history_view       admin:auth_user_history
+/admin/auth/user/add/   django.contrib.auth.admin.add_view      admin:auth_user_add
+/admin/autocomplete/    django.contrib.admin.sites.autocomplete_view    admin:autocomplete
+/admin/jsi18n/  django.contrib.admin.sites.i18n_javascript      admin:jsi18n
+/admin/login/   django.contrib.admin.sites.login        admin:login
+/admin/logout/  django.contrib.admin.sites.logout       admin:logout
+/admin/password_change/ django.contrib.admin.sites.password_change      admin:password_change
+/admin/password_change/done/    django.contrib.admin.sites.password_change_done admin:password_change_done
+/admin/r/<path:content_type_id>/<path:object_id>/       django.contrib.contenttypes.views.shortcut      admin:view_on_site
+/border/dashboard/      border.views.border_checkpoint_dashboard_view   border_checkpoint_dashboard
+/border/log/    border.views.border_log_entry_view      border_log_entry
+/citizens/      citizens.views.citizen_list_view        citizen_list
+/citizens/<int:citizen_id>/     citizens.views.citizen_detail_view      citizen_detail
+/citizens/<int:citizen_id>/update/      citizens.views.citizen_update_view      citizen_update
+/citizens/create/       citizens.views.citizen_create_view      citizen_create
+/documents/<int:document_id>/verify/    documents.views.document_verify_action_view     document_verify_action
+/documents/queue/       documents.views.document_verification_queue_view        document_verification_queue
+/officers/login/        officers.views.officer_login_view       officer_login
+/officers/logout/       officers.views.officer_logout_view      officer_logout
+/officers/manage/       officers.views.officer_management_list_view     officer_management_list
+/passports/applications/        passports.views.passport_application_list_view  passport_application_list
+/passports/applications/<int:application_id>/   passports.views.passport_application_detail_view        passport_application_detail
+/passports/applications/<int:application_id>/review/    passports.views.passport_review_action_view     passport_review_action
+/passports/applications/create/ passports.views.passport_application_create_view        passport_application_create
+/travel/history/        travel.views.travel_history_search_view travel_history_search
+/travel/report/ travel.views.travel_report_export_view  travel_report_export
+/visas/<int:visa_id>/   visas.views.visa_detail_view    visa_detail
+/visas/<int:visa_id>/process/   visas.views.visa_process_view   visa_process
+/visas/queue/   visas.views.visa_queue_view     visa_queue

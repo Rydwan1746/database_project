@@ -18,6 +18,12 @@
   pip install -r requirements.txt
 ```
 
+**4. Install CORS for react**
+
+```bash
+  pip install django-cors-headers
+```
+
 **4. Start the server**
 
 ```bash
